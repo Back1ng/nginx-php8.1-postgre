@@ -3,13 +3,13 @@ version: '3.9'
 services:
 
   db:
-    image: postgres:14.2
+    image: postgres:14.2-alpine
     restart: always
     environment:
       POSTGRES_PASSWORD: password
 
   php8.1.2-fpm:
-    image: php:8.1.2-fpm
+    image: php:8.1.2-fpm-alpine
     build: ./php8.1.2-fpm
     depends_on:
       - db
@@ -20,7 +20,7 @@ services:
       - ./php8.1.2-fpm/www.conf:/usr/local/etc/php-fpm.d/www.conf
 
   nginx-1.21.6:
-    image: nginx:1.21.6
+    image: nginx:1.21.6-alpine
     ports:
       - '80:80'
     volumes:
