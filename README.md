@@ -11,7 +11,7 @@ Steps to install new composer project
   <li><code>docker-compose up --build</code></li>
   <li>In new terminal run command <code>docker ps</code></li>
   <li>Now u can see containers, find CONTAINER ID of PHP IMAGE (for example 220def7aa3a3)</li>
-  <li>Run command to open bash: <code> docker exec -it 220def7aa3a3 bash</code></li>
+  <li>Run command to open bash: <code> docker exec -it 220def7aa3a3 /bin/ash</code></li>
   <li>Go to projects folder <code>cd /var/www</code></li>
   <li>Because project folder is already used, and composer cannot install new project in existing directory, we will create on new folder. For example, we create a new laravel project. <code>composer create-project laravel/laravel app</code></li>
   <li>Than, we need push this app to our nginx/fpm folder, launch this command to copy all files: <code>cp -R app/* project/</code></li>
